@@ -1,7 +1,7 @@
-flask
-torch
-transformers
-pandas
-scikit-learn
-numpy
-evaluate
+flask==3.0.0
+torch==2.5.1
+transformers==4.37.2
+pandas==2.2.3
+scikit-learn==1.6.0
+numpy==1.26.4
+evaluate==0.4.1

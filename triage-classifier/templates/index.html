@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chieftains Health - Triage Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><span style="color: #2596be">Chieftains</span><span style="color: #00B7EB">Health</span></h1>
+        <h1>About Us</h1>
+    </header>
+    <main>
+        <div class="content">
+            <div class="background-image-box"></div>
+            <div class="container-box">
+                <h2>Triage Form</h2>
+                <form action="" method="post">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <textarea id="inquiry" name="inquiry" placeholder="Your Inquiry" required></textarea>
+                    <button type="submit">Send Triage Report</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+# app/templates/results.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triage Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="triageData">
+        <span hidden id="name">{{name}}</span>
+        <span hidden id="status">{{status}}</span>
+        <span hidden id="message">{{message}}</span>
+    </div>
+    <header>
+        <h1><span style="color: #2596be">Chieftains</span><span style="color: #00B7EB">Health</span></h1>
+        <h1>About Us</h1>
+    </header>
+    <h1 class="border">Triage Landing Page</h1>
+    <div class="result">
+        <h1>The Inquiry provided by {{name}} has been marked as <span style="font-weight: bold;">{{status}}.</span></h1>
+    </div>
+    <div id="historyContainer" class="historyContainer">
+        <h1 class="historyHeader">Status History</h1>
+        <div class="historyItem">
+            <div class="historyContent">
+                <h1>{{name}} - <span style="font-weight: bold;">{{status}}</span></h1>
+                <p><span style="font-style: italic;">"{{message}}"</span></p>
+            </div> 
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triage Landing Page</title>
-    <link rel="stylesheet" href="static\style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div id="triageData">
@@ -16,35 +16,29 @@
         <h1><span style="color: #2596be">Chieftains</span><span style="color: #00B7EB">Health</span></h1>
         <h1>About Us</h1>
     </header>
+    
     <h1 class="border">Triage Landing Page</h1>
+    
     <div class="result">
         <h1>The Inquiry provided by {{name}} has been marked as <span style="font-weight: bold;">{{status}}.</span></h1>
     </div>
-    <div class="historyContainer">
+
+    <div class="nav-buttons">
+        <a href="{{ url_for('views.home') }}" class="nav-button">Return to Form</a>
+        <button onclick="clearTriageHistory()" class="nav-button secondary">Clear History</button>
+    </div>
+    
+    <div id="historyContainer" class="historyContainer">
         <h1 class="historyHeader">Status History</h1>
         <div class="historyItem">
             <div class="historyContent">
                 <h1>{{name}} - <span style="font-weight: bold;">{{status}}</span></h1>
                 <p><span style="font-style: italic;">"{{message}}"</span></p>
+                <small class="timestamp">Just now</small>
             </div> 
         </div>
-
-        <div class="historyItem">
-            <div class="historyContent">
-                <h1>Michael Malone - <span style="font-weight: bold;">Urgent</span></h1>
-                <p><span style="font-style: italic;">"My leg is broken and I am bleeding."</span></p>
-            </div> 
-        </div>
-
-        <div class="historyItem">
-            <div class="historyContent">
-                <h1>Steve Nash - <span style="font-weight: bold;">Not Urgent</span></h1>
-                <p><span style="font-style: italic;">"I'm having some cold sympotoms."</span></p>
-            </div> 
-        </div>
-
-
     </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-    <script src="static\script.js"></script>
 </html>

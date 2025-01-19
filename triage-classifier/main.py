@@ -1,6 +1,7 @@
 from flask import Flask
-from config import Config
 from views import views
+from config import Config
+
 
 def create_app():
     """Create and configure the Flask application."""
